@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minecraft Panel Theme Editor</title>
+    <link rel="stylesheet" href="theme-editor.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="controls">
+        <h1>Theme Builder</h1>
+
+        <div class="theme-switcher">
+          <button class="theme-btn active" data-mode="dark" type="button">Dark</button>
+          <button class="theme-btn" data-mode="light" type="button">Light</button>
+        </div>
+
+        <div class="control-panel">
+          <div class="setting-group">
+            <div class="setting-row">
+              <label for="bgColor">Background</label>
+              <input id="bgColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="surfaceColor">Surface</label>
+              <input id="surfaceColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="surfaceAltColor">Surface Alt</label>
+              <input id="surfaceAltColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="panelColor">Panel</label>
+              <input id="panelColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="textColor">Text</label>
+              <input id="textColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="mutedColor">Muted</label>
+              <input id="mutedColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="borderColor">Border</label>
+              <input id="borderColor" type="color" />
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <div class="setting-row">
+              <label for="accentColor">Accent</label>
+              <input id="accentColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="accentStrongColor">Accent Strong</label>
+              <input id="accentStrongColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="accentSoftColor">Accent Soft</label>
+              <input id="accentSoftColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="buttonStartColor">Button Start</label>
+              <input id="buttonStartColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="buttonEndColor">Button End</label>
+              <input id="buttonEndColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="buttonTextColor">Button Text</label>
+              <input id="buttonTextColor" type="color" />
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <div class="setting-row">
+              <label for="dropdownBgColor">Dropdown BG</label>
+              <input id="dropdownBgColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="dropdownTextColor">Dropdown Text</label>
+              <input id="dropdownTextColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="bannerBgColor">Banner BG</label>
+              <input id="bannerBgColor" type="color" />
+            </div>
+            <div class="setting-row">
+              <label for="buttonRadius">Button Radius</label>
+              <input id="buttonRadius" type="range" min="0" max="32" value="12" />
+            </div>
+            <div class="setting-row">
+              <label for="dropdownRadius">Dropdown Radius</label>
+              <input id="dropdownRadius" type="range" min="0" max="24" value="10" />
+            </div>
+            <div class="setting-row">
+              <label for="bannerHeight">Banner Height</label>
+              <input id="bannerHeight" type="range" min="80" max="220" value="132" />
+            </div>
+            <div class="setting-row">
+              <label for="logoSize">Logo Size</label>
+              <input id="logoSize" type="range" min="48" max="160" value="96" />
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <div class="setting-row">
+              <label for="logoUrl">Custom Logo URL</label>
+            </div>
+            <div class="setting-row">
+              <input id="logoUrl" type="url" placeholder="https://example.com/logo.png" />
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <button id="resetTheme" class="secondary-btn" type="button">Reset Theme</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="preview">
+        <div class="preview-stage">
+          <header class="panel-header">
+            <div class="brand">
+              <img id="brandLogo" class="brand-logo" alt="Brand logo" src="" />
+              <div class="brand-name">
+                <strong>Neocore</strong>
+                <span>Server Control</span>
+              </div>
+            </div>
+
+            <nav class="header-nav" aria-label="Main navigation">
+              <a class="active" href="#">Overview</a>
+              <a href="#">Servers</a>
+              <a href="#">Console</a>
+              <a href="#">Files</a>
+              <a href="#">Settings</a>
+            </nav>
+
+            <button class="primary-btn" type="button">Create Server</button>
+          </header>
+
+          <div class="toolbar">
+            <h2>Server Dashboard</h2>
+            <div class="toolbar-actions">
+              <div class="dropdown-box">
+                <select aria-label="Server selector">
+                  <option selected>Server-001</option>
+                  <option>Server-002</option>
+                  <option>Server-003</option>
+                </select>
+              </div>
+              <button class="secondary-btn" type="button">Restart</button>
+              <button class="primary-btn" type="button">Start</button>
+            </div>
+          </div>
+
+          <section class="server-grid">
+            <article class="card">
+              <div class="card-header">
+                <strong>Lobby</strong>
+                <span class="status-dot" aria-label="Online"></span>
+              </div>
+              <div class="card-body">
+                <div class="metric-row"><span>Players</span><span>32 / 64</span></div>
+                <div class="metric-row"><span>TPS</span><span>19.98</span></div>
+                <div class="metric-row"><span>Uptime</span><span>18h 42m</span></div>
+                <div class="card-actions">
+                  <button class="secondary-btn" type="button">Console</button>
+                  <button class="primary-btn" type="button">Manage</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <strong>Skyblock</strong>
+                <span class="status-dot" aria-label="Online" style="background:#67d6ff;box-shadow:0 0 12px rgba(103,214,255,0.8)"></span>
+              </div>
+              <div class="card-body">
+                <div class="metric-row"><span>Players</span><span>9 / 24</span></div>
+                <div class="metric-row"><span>TPS</span><span>20.00</span></div>
+                <div class="metric-row"><span>Uptime</span><span>10h 11m</span></div>
+                <div class="card-actions">
+                  <button class="secondary-btn" type="button">Files</button>
+                  <button class="primary-btn" type="button">Restart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <strong>Creative</strong>
+                <span class="status-dot" aria-label="Paused" style="background:#ffd166;box-shadow:0 0 12px rgba(255,209,102,0.8)"></span>
+              </div>
+              <div class="card-body">
+                <div class="metric-row"><span>Players</span><span>5 / 10</span></div>
+                <div class="metric-row"><span>TPS</span><span>18.9</span></div>
+                <div class="metric-row"><span>Uptime</span><span>2h 48m</span></div>
+                <div class="card-actions">
+                  <button class="secondary-btn" type="button">Logs</button>
+                  <button class="primary-btn" type="button">Start</button>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <div style="padding: 0 24px 24px;">
+            <textarea id="cssOutput" class="css-output" readonly aria-label="Generated CSS variables"></textarea>
+            <div style="margin-top: 12px; display: flex; justify-content: flex-end;">
+              <button class="primary-btn" id="copyCss" type="button">Copy CSS</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="theme-editor.js"></script>
+  </body>
+</html>
