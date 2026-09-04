@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+if (($_SERVER['HTTPS'] ?? '') === '' || strtolower((string) $_SERVER['HTTPS']) === 'off') {
+    http_response_code(403);
+    header('Content-Type: text/plain; charset=utf-8');
+    echo 'The installer requires HTTPS.';
+    exit;
+}
+
 session_set_cookie_params([
     'httponly' => true,
     'samesite' => 'Strict',
@@ -112,8 +119,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$installed) {
     installRequired('daemon_url', 'Daemon URL', 255);
     installRequired('daemon_token', 'Daemon token', 255);
 
-    if (filter_var($values['panel_url'], FILTER_VALIDATE_URL) === false || !in_array(parse_url($values['panel_url'], PHP_URL_SCHEME), ['http', 'https'], true)) {
-        $errors[] = 'Panel URL must be a valid http or https URL.';
+    if (filter_var($values['panel_url'], FILTER_VALIDATE_URL) === false || parse_url($values['panel_url'], PHP_URL_SCHEME) !== 'https') {
+        $errors[] = 'Panel URL must be a valid https URL.';
     }
     if (filter_var($values['daemon_url'], FILTER_VALIDATE_URL) === false || !in_array(parse_url($values['daemon_url'], PHP_URL_SCHEME), ['http', 'https'], true)) {
         $errors[] = 'Daemon URL must be a valid http or https URL.';

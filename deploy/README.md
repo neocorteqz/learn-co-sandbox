@@ -61,7 +61,7 @@ Caddy obtains and renews HTTPS automatically when DNS points `panel.example.com`
 ## Installation order
 
 1. Configure one web server and PHP-FPM.
-2. Open `https://panel.example.com/install.php`.
+2. Open `https://panel.example.com/install.php`. The installer rejects non-HTTPS requests before starting a session.
 3. Complete the installer and verify the panel health endpoint.
 4. Remove or deny access to `public/install.php` after installation.
 5. Confirm `APP_DEBUG`-equivalent production settings, firewall rules, and upload limits before opening the panel publicly.
