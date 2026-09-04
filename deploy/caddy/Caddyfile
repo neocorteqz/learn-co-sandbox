@@ -1,0 +1,12 @@
+panel.example.com {
+    root * /var/www/minecraft-panel/public
+    encode gzip
+
+    # Change to 520MB only when using deploy/php/relaxed.ini.
+    request_body {
+        max_size 12MB
+    }
+
+    php_fastcgi unix//run/php/php8.5-fpm.sock
+    file_server
+}

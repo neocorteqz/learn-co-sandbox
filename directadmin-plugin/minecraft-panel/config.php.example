@@ -1,0 +1,10 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'api_url' => 'https://panel.neocorteqz.com/api',
+    'api_token' => '',
+    'connect_timeout' => 3,
+    'timeout' => 8,
+];
